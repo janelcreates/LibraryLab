@@ -4,34 +4,38 @@ public class Book {
     boolean borrowed;
 
     // Creates a new Book
-    public Book(String bookTitle) {
+    public Book(String title) {
         // Implement this method
-    	title = "The Da Vinci Code";
+    	this.title = title;
+    	this.borrowed = false;
     }
    
     // Marks the book as rented
     public void borrowed() {
         // Implement this method
-    	borrowed = true;
+    	this.borrowed = true;
     }
    
     // Marks the book as not rented
     public void returned() {
         // Implement this method
-    	borrowed = false;
+    	this.borrowed = false;
     }
    
     // Returns true if the book is rented, false otherwise
     public boolean isBorrowed() {
         // Implement this method
-    	return borrowed;
-    	
+    	if (this.borrowed) {
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
    
     // Returns the title of the book
     public String getTitle() {
         // Implement this method
-    	return title;
+    	return this.title;
     }
 
     public static void main(String[] arguments) {
@@ -44,4 +48,4 @@ public class Book {
         example.returned();
         System.out.println("Rented? (should be false): " + example.isBorrowed());
     }
-} 
+}
